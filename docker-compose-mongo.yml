@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6.0  # You can change the version as needed
+    container_name: mongodb_container
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+
+      - mongo-data:/data/db
+    networks:
+      - agent-network
+
+  
+
+volumes:
+  mongo-data:
+  
+
+networks:
+  agent-network:
+    driver: bridge
+
+
+# docker compose -f docker-compose-infra.yml up --build
+# docker compose -f docker-compose-infra.yml down
+

@@ -1,0 +1,6 @@
+langchain
+langgraph
+langsmith
+langchain-groq
+langchain_community
+pymongo
